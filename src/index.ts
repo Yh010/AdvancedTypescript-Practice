@@ -9,7 +9,9 @@ interface User{
 
 type UpdatedProps = Pick<User, 'name' | 'age'>;
 
-function updatedUser(updatedUserProps: UpdatedProps) {
+type UpdatedOptionalProps = Partial<UpdatedProps>
+
+function updatedUser(updatedUserProps: UpdatedOptionalProps) {
     
 }
 
