@@ -1,5 +1,5 @@
 import { userAgent } from "next/server";
-
+import { z } from 'zod';
 interface User{
     name: string;
     age: number;
@@ -43,3 +43,12 @@ newUsers.set("egeee", 54);
 
 const newUser = newUsers.get("egeee");
 console.log(newUser);
+
+
+const userProfileSchema = z.object({
+  name: z.string().min(1, { message: "Name cannot be empty" }),
+  email: z.string().email({ message: "Invalid email format" }),
+  age: z.number().min(18, { message: "You must be at least 18 years old" }).optional(),
+});
+
+type FinaluserProfileSchema = z.infer<typeof userProfileSchema>;
