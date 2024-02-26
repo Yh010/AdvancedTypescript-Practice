@@ -36,3 +36,10 @@ const users: Users = {
     "wegrwegr": 21,
     "wgwrg":55
 } 
+
+const newUsers = new Map();
+newUsers.set("ergergre", 21);
+newUsers.set("egeee", 54);
+
+const newUser = newUsers.get("egeee");
+console.log(newUser);
