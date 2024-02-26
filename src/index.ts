@@ -29,3 +29,10 @@ const config: Readonly<Config>={
 function sumOfAge(user1: User, user2: User) {
     return user1.age + user2.age;
 }
+
+
+type Users = Record<string, number>;
+const users: Users = {
+    "wegrwegr": 21,
+    "wgwrg":55
+} 
